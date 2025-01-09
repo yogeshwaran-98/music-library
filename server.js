@@ -16,6 +16,11 @@ app.use(express.json());
 
 connectDB();
 
+app.use("/" , (req , res) => {
+  console.log("url working, inside server");
+  res.send("Server is running!");
+})
+
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/artists", artistRoute);
